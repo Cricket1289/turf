@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { User, Phone, School, Book, CreditCard, FileText, CheckCircle } from 'lucide-react';
 import axios from 'axios';
 import { supabase } from '../supabase';
+import qrCode from '../assets/qr.png';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -177,7 +178,7 @@ const Register = () => {
                 <p className="text-sm text-neon font-mono mt-2">UPI: 9398203083@ybl</p>
              </div>
              <div className="bg-white p-3 rounded-2xl shadow-[0_0_30px_rgba(0,255,204,0.3)]">
-                <img src="/src/assets/qr.png" alt="Payment QR" className="w-40 h-40 object-contain" onError={(e) => e.target.src = "https://via.placeholder.com/160?text=PAYMENT+QR"} />
+                <img src={qrCode} alt="Payment QR" className="w-40 h-40 object-contain" onError={(e) => e.target.src = "https://placehold.co/160?text=PAYMENT+QR"} />
              </div>
              <p className="text-xs text-slate-500 text-center max-w-xs">Scan the QR code above using PhonePe or any UPI app to pay your registration fee.</p>
              <div className="pt-4 border-t border-white/5 w-full text-center">
