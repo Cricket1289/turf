@@ -5,6 +5,8 @@ services:
       dockerfile: Dockerfile
     container_name: box-tournament-backend
     restart: always
+    env_file:
+      - ./backend/.env
     ports:
       - "5801:5000"
     networks:
