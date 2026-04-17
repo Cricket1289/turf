@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0a0a;
+  --color-primary: #00ffcc;
+  --color-accent: #ffcc00;
+  --color-dark: #111111;
+  --color-neon: #00ffcc;
+  
+  --font-sans: "Inter", "system-ui", "sans-serif";
+  --font-sports: "Orbitron", "sans-serif";
+  
+  --shadow-neon: 0 0 15px rgba(0, 255, 204, 0.3);
+  --shadow-primary: 0 0 20px rgba(0, 255, 204, 0.4);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-slate-100 font-sans min-h-screen;
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  .font-sports {
+    font-family: var(--font-sports);
+    @apply tracking-wider;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  .neon-border {
+    @apply border border-neon/50 shadow-neon;
+  }
+
+  .btn-primary {
+    @apply bg-neon text-dark font-bold px-8 py-3 rounded-full hover:bg-neon/80 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-primary;
+  }
+}

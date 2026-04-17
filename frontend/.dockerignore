@@ -1,0 +1,10 @@
+node_modules
+dist
+npm-debug.log
+.env
+.git
+.gitignore
+README.md
+eslint.config.js
+tailwind.config.js
+vite.config.js
