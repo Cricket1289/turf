@@ -102,7 +102,7 @@ const Register = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-black mb-4">PLAYER <span className="text-neon">REGISTRATION</span></h2>
           <div className="bg-neon/10 border border-neon/20 px-6 py-2 rounded-full inline-block">
-             <p className="text-neon uppercase tracking-widest text-xs font-black">Exclusively for B.Tech Students & 2025 Pass-outs</p>
+             <p className="text-neon uppercase tracking-widest text-xs font-black">Exclusively for B.Tech Students of 2026, 27 and 28 Batches.</p>
           </div>
         </div>
 
