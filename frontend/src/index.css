@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 
 @theme {
   --color-background: #0a0a0a;
@@ -7,6 +7,11 @@
   --color-accent: #ffcc00;
   --color-dark: #111111;
   --color-neon: #00ffcc;
+  
+  /* Legacy/Config colors fallback */
+  --color-navy: #0f172a;
+  --color-sky: #38bdf8;
+  --color-pink: #f472b6;
   
   --font-sans: "Inter", "system-ui", "sans-serif";
   --font-sports: "Orbitron", "sans-serif";
