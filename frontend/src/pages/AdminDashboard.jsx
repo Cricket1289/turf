@@ -6,9 +6,9 @@ import TournamentBracket from '../components/TournamentBracket';
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('registrations');
   const [players, setPlayers] = useState([
-    { id: 1, full_name: 'Abhiram Krishna', phone: '9876543210', college: 'VIT', status: 'Pending' },
-    { id: 2, full_name: 'John Smith', phone: '9888888888', college: 'IIT', status: 'Approved' },
-    { id: 3, full_name: 'Mike Johnson', phone: '9777777777', college: 'BITS', status: 'Rejected' },
+    { id: 1, full_name: 'Abhiram Krishna', team_name: 'Ottobon Titans', phone: '9876543210', college: 'VIT', status: 'Pending' },
+    { id: 2, full_name: 'John Smith', team_name: 'Cyber Warriors', phone: '9888888888', college: 'IIT', status: 'Approved' },
+    { id: 3, full_name: 'Mike Johnson', team_name: 'Logic Legends', phone: '9777777777', college: 'BITS', status: 'Rejected' },
   ]);
 
   return (
@@ -54,7 +54,7 @@ const AdminDashboard = () => {
               <table className="w-full text-left">
                 <thead>
                   <tr className="border-b border-white/10 text-slate-500 text-sm uppercase">
-                    <th className="py-4 px-6">Player Name</th>
+                    <th className="py-4 px-6">Player / Team</th>
                     <th className="py-4 px-6">College</th>
                     <th className="py-4 px-6">Documents</th>
                     <th className="py-4 px-6">Status</th>
@@ -64,12 +64,14 @@ const AdminDashboard = () => {
                 <tbody className="divide-y divide-white/5">
                   {players.map((player) => (
                     <tr key={player.id} className="group hover:bg-white/5 transition-colors">
-                      <td className="py-5 px-6 font-bold">{player.full_name}</td>
+                      <td className="py-5 px-6">
+                        <div className="font-bold">{player.full_name}</div>
+                        <div className="text-[10px] text-neon uppercase tracking-widest">{player.team_name}</div>
+                      </td>
                       <td className="py-5 px-6 text-slate-400">{player.college}</td>
                       <td className="py-5 px-6">
                         <div className="flex gap-4">
                           <button title="Student ID" className="text-neon hover:underline flex items-center gap-1 text-xs"><ExternalLink size={14} /> ID</button>
-                          <button title="Marks Memo" className="text-accent hover:underline flex items-center gap-1 text-xs"><ExternalLink size={14} /> MEMO</button>
                         </div>
                       </td>
                       <td className="py-5 px-6">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { User, Phone, School, Book, CreditCard, FileText, CheckCircle } from 'lucide-react';
+import { User, Phone, School, Book, CreditCard, Users, CheckCircle } from 'lucide-react';
 import axios from 'axios';
 import { supabase } from '../supabase';
 import qrCode from '../assets/qr.png';
@@ -10,9 +10,9 @@ const Register = () => {
     fullName: '',
     phoneNumber: '',
     collegeName: '',
+    teamName: '',
     course: '',
     studentIdFile: null,
-    marksMemoFile: null,
     paymentScreenshotFile: null,
   });
 
@@ -49,10 +49,9 @@ const Register = () => {
       };
 
       const studentIdUrl = await uploadFile(formData.studentIdFile, 'Student ID', 'ids');
-      const marksMemoUrl = await uploadFile(formData.marksMemoFile, 'Marks Memo', 'memos');
       const paymentScreenshotUrl = await uploadFile(formData.paymentScreenshotFile, 'Payment proof', 'payments');
 
-      if (!studentIdUrl || !marksMemoUrl || !paymentScreenshotUrl) {
+      if (!studentIdUrl || !paymentScreenshotUrl) {
         throw new Error('Please upload all required documents.');
       }
 
@@ -61,7 +60,6 @@ const Register = () => {
       const response = await axios.post('/api/registration/register', {
         ...formData,
         studentIdUrl,
-        marksMemoUrl,
         paymentScreenshotUrl
       }, {
         timeout: 30000 // 30 seconds timeout
@@ -91,7 +89,7 @@ const Register = () => {
         >
           <CheckCircle className="w-20 h-20 text-neon mx-auto mb-6" />
           <h2 className="text-3xl font-black mb-4">REGISTRATION SUCCESSFUL!</h2>
-          <p className="text-slate-400 mb-8">Your details have been recorded. Our team will review your ID and Memo. Stay tuned for further instructions!</p>
+          <p className="text-slate-400 mb-8">Your details have been recorded. Our team will review your ID and Payment. Stay tuned for further instructions!</p>
           <button onClick={() => window.location.href = '/'} className="btn-primary w-full">Back to Home</button>
         </motion.div>
       </div>
@@ -141,6 +139,14 @@ const Register = () => {
               required
             />
             <FormInput 
+              icon={Users} 
+              label="Team Name" 
+              placeholder="Enter your team name" 
+              value={formData.teamName}
+              onChange={(e) => setFormData({...formData, teamName: e.target.value})}
+              required
+            />
+            <FormInput 
               icon={Book} 
               label="Course / Stream" 
               placeholder="e.g. B.Tech CS" 
@@ -156,12 +162,6 @@ const Register = () => {
               icon={CreditCard} 
               label="Student ID" 
               onChange={(file) => setFormData({...formData, studentIdFile: file})}
-            />
-            <FileUploadField 
-              id="marksMemo"
-              icon={FileText} 
-              label="Latest Marks Memo" 
-              onChange={(file) => setFormData({...formData, marksMemoFile: file})}
             />
             <FileUploadField 
               id="paymentScreenshot"

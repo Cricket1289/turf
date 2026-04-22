@@ -16,9 +16,10 @@ Player registration data and document links.
 - `full_name`: TEXT
 - `phone_number`: TEXT (10-digit validation)
 - `college_name`: TEXT
+- `team_name`: TEXT
 - `course`: TEXT
 - `student_id_url`: TEXT
-- `marks_memo_url`: TEXT
+- `marks_memo_url`: TEXT (Optional/Removed)
 - `payment_screenshot_url`: TEXT
 - `registration_status`: TEXT ('Pending', 'Approved', 'Rejected')
 - `team_id`: UUID (Foreign Key to `teams`)
@@ -74,9 +75,10 @@ CREATE TABLE IF NOT EXISTS players (
   full_name TEXT NOT NULL,
   phone_number TEXT NOT NULL CHECK (phone_number ~ '^[0-9]{10}$'),
   college_name TEXT NOT NULL,
+  team_name TEXT NOT NULL,
   course TEXT NOT NULL,
   student_id_url TEXT NOT NULL,
-  marks_memo_url TEXT NOT NULL,
+  marks_memo_url TEXT,
   payment_screenshot_url TEXT NOT NULL,
   registration_status TEXT DEFAULT 'Pending' CHECK (registration_status IN ('Pending', 'Approved', 'Rejected')),
   team_id UUID REFERENCES teams(id) ON DELETE SET NULL,

@@ -6,10 +6,10 @@ const router = express.Router();
 // Register a new player
 router.post('/register', async (req, res) => {
   try {
-    const { fullName, phoneNumber, collegeName, course, studentIdUrl, marksMemoUrl, paymentScreenshotUrl } = req.body;
+    const { fullName, phoneNumber, collegeName, teamName, course, studentIdUrl, paymentScreenshotUrl } = req.body;
 
     // Validation
-    if (!fullName || !phoneNumber || !collegeName || !course || !studentIdUrl || !marksMemoUrl || !paymentScreenshotUrl) {
+    if (!fullName || !phoneNumber || !collegeName || !teamName || !course || !studentIdUrl || !paymentScreenshotUrl) {
       return res.status(400).json({ error: 'All fields are required' });
     }
 
@@ -24,9 +24,9 @@ router.post('/register', async (req, res) => {
           full_name: fullName, 
           phone_number: phoneNumber, 
           college_name: collegeName, 
+          team_name: teamName,
           course, 
           student_id_url: studentIdUrl, 
-          marks_memo_url: marksMemoUrl,
           payment_screenshot_url: paymentScreenshotUrl
         }
       ])
