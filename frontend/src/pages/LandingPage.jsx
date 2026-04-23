@@ -170,10 +170,6 @@ const LandingPage = () => {
                   <span className="w-8 h-8 rounded-full bg-neon/20 flex items-center justify-center text-neon font-bold shrink-0">6</span>
                   <p className="text-slate-300">Entry fee must be cleared before the first match.</p>
                 </li>
-                <li className="flex gap-4">
-                  <span className="w-8 h-8 rounded-full bg-neon/20 flex items-center justify-center text-neon font-bold shrink-0">7</span>
-                  <p className="text-slate-300"><span className="text-white font-bold">Recognition:</span> All participants will receive an official <span className="text-neon font-bold">Participation Certificate</span> from Ottobon.</p>
-                </li>
               </ul>
             </div>
 
