@@ -6,7 +6,7 @@ import logo from '../assets/logo.png';
 const Navbar = () => {
   return (
     <nav className="glass sticky top-0 z-50 py-4 px-6 md:px-12 flex justify-between items-center border-b border-primary/20">
-      <Link to="/" className="flex items-center gap-3 group">
+      <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-3 group">
         <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
             <img 
               src={logo} 
@@ -21,7 +21,7 @@ const Navbar = () => {
       </Link>
       
       <div className="hidden md:flex items-center gap-8 font-medium">
-        <Link to="/" className="hover:text-neon transition-colors">Home</Link>
+        <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-neon transition-colors">Home</Link>
         <a href="#rules" className="hover:text-neon transition-colors">Rules</a>
         <Link to="/register" className="btn-primary py-2 px-6">Register</Link>
       </div>

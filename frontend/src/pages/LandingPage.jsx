@@ -170,10 +170,6 @@ const LandingPage = () => {
                   <span className="w-8 h-8 rounded-full bg-neon/20 flex items-center justify-center text-neon font-bold shrink-0">6</span>
                   <p className="text-slate-300">Entry fee must be cleared before the first match.</p>
                 </li>
-                <li className="flex gap-4">
-                  <span className="w-8 h-8 rounded-full bg-neon/20 flex items-center justify-center text-neon font-bold shrink-0">7</span>
-                  <p className="text-slate-300"><span className="text-white font-bold">Career Reward:</span> One participant from the Winning team and one from the Runner-up team will receive a <span className="text-neon font-bold uppercase">Free Internship</span> at Ottobon.</p>
-                </li>
               </ul>
             </div>
 
@@ -181,7 +177,7 @@ const LandingPage = () => {
               <h3 className="text-2xl font-sports mb-6 text-neon">Quick Info</h3>
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4 md:gap-6 mt-12 w-full">
-                  <InfoCard icon={Calendar} label="Date" value="May 15th , 2026" />
+                  <InfoCard icon={Calendar} label="Date" value="May 22nd, 2026" />
                   <InfoCard icon={MapPin} label="Venue" value="Vizag" detail="(Announce Soon)" />
                   <InfoCard
                     icon={UserCheck}
@@ -195,9 +191,9 @@ const LandingPage = () => {
                     value="8,000 INR"
                     detail="Winners: 5K | Runners: 3K"
                   />
+
                 </div>
-              </div>
-            </div>
+              </div>            </div>
           </div>
         </div>
       </section>
