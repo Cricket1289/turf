@@ -170,6 +170,10 @@ const LandingPage = () => {
                   <span className="w-8 h-8 rounded-full bg-neon/20 flex items-center justify-center text-neon font-bold shrink-0">6</span>
                   <p className="text-slate-300">Entry fee must be cleared before the first match.</p>
                 </li>
+                <li className="flex gap-4">
+                  <span className="w-8 h-8 rounded-full bg-neon/20 flex items-center justify-center text-neon font-bold shrink-0">7</span>
+                  <p className="text-slate-300"><span className="text-white font-bold">College Limit:</span> A college can register a maximum of <span className="text-neon font-bold">2 teams</span>. The first 2 teams to register from a college will be considered — <span className="text-neon font-bold">first come, first served</span>.</p>
+                </li>
               </ul>
             </div>
 
